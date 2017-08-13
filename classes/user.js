@@ -1,0 +1,1 @@
+//TODO: add necessary properties for keeping track of users and their information
