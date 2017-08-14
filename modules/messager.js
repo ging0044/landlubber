@@ -27,10 +27,11 @@ module.exports = {
             if (!error && response.statusCode === 200) {
                 var recipientId = body.recipient_id;
                 var messageId = body.message_id;
-                callback();
+                callback(200);
                 console.log("Successfully sent message with id %s to recipient %s",
                     messageId, recipientId);
             } else {
+                callback(500);
                 console.error("Unable to send message.");
                 console.error(response);
                 console.error(error);

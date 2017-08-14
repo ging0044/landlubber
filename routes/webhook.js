@@ -21,8 +21,8 @@ router.post('/', function (req, res, next) {
     //res.sendStatus(200);
     req.body.entry.forEach(function (entry) {
         entry.messaging.forEach(function (event){
-            messager.text(event.sender.id, "responding to your message of " + event.message.text, function () {
-                res.sendStatus(200);
+            messager.text(event.sender.id, "responding to your message of " + event.message.text, function (status) {
+                res.sendStatus(status);
             });
         });
     });
